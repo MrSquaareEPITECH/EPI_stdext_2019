@@ -10,7 +10,8 @@
 
 #include "stringext.h"
 
-char *strrchrn(const char *str, char chr) {
+char *strrchrn(const char *str, char chr)
+{
     for (long i = (long)(strlen(str)) - 1; i >= 0; --i)
         if (str[i] != chr)
             return ((char *)(&str[i]));

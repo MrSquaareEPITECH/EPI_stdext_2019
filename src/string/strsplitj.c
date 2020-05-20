@@ -39,7 +39,7 @@ char **strsplitj(const char *str, const char *delim, const char *jump)
     int i = 0;
 
     for (char *ptr = strstrn(str, delim); ptr && *ptr;
-         ptr = (ptr) ? strstrn(ptr, delim) : NULL) {
+        ptr = (ptr) ? strstrn(ptr, delim) : NULL) {
         from = ptr;
         if (strncmp(ptr, jump, strlen(jump)) == 0) {
             ptr = strstr(ptr + 1, jump);

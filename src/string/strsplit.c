@@ -36,7 +36,7 @@ char **strsplit(const char *str, const char *delim)
     int i = 0;
 
     for (char *ptr = strstrn(str, delim); ptr && *ptr;
-         ptr = (ptr) ? strstrn(ptr, delim) : NULL) {
+        ptr = (ptr) ? strstrn(ptr, delim) : NULL) {
         from = ptr;
         if (strncmp(ptr, delim, strlen(delim)) != 0)
             ptr = strstr(ptr, delim);

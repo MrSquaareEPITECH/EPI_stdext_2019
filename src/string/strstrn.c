@@ -14,6 +14,6 @@ char *strstrn(const char *str, const char *needle)
     char *npos = (char *)(str);
 
     for (char *pos = strstr(str, needle); (npos) && (npos == pos);
-         npos = pos + strlen(needle), pos = strstr(npos, needle)) ;
+        npos = pos + strlen(needle), pos = strstr(npos, needle)) ;
     return (npos);
 }
