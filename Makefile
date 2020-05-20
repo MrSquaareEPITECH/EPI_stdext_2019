@@ -23,9 +23,35 @@ RM					=		rm -rf
 
 MAIN_SRC			=		main.c
 
-PROJ_SRC			=
+PROJ_SRC			=		string/strchrn.c					\
+							string/strrchrn.c					\
+							string/strrpbrk.c					\
+							string/strpbrkn.c					\
+							string/strrpbrkn.c					\
+							string/strtrim.c					\
+							string/strrtrim.c					\
+							string/strltrim.c					\
+							string/strsplit.c					\
+							string/strsplitj.c					\
+							string/strrev.c						\
+							string/strrstr.c					\
+							string/strstrn.c					\
+							string/strrstrn.c					\
 
-TEST_SRC			=
+TEST_SRC			=		string/test_strchrn.c				\
+							string/test_strrchrn.c				\
+							string/test_strrpbrk.c				\
+							string/test_strpbrkn.c				\
+							string/test_strrpbrkn.c				\
+							string/test_strtrim.c				\
+							string/test_strrtrim.c				\
+							string/test_strltrim.c				\
+							string/test_strsplit.c				\
+							string/test_strsplitj.c				\
+							string/test_strrev.c				\
+							string/test_strrstr.c				\
+							string/test_strstrn.c				\
+							string/test_strrstrn.c				\
 
 CFLAGS				+=		-I $(INCL_DIR)
 CFLAGS				+=		-W -Wall -Wextra -Werror
