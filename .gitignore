@@ -1,5 +1,6 @@
 # Binaries
 *.out
+unit_tests
 
 # Objects
 *.o
