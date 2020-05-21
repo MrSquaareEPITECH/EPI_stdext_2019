@@ -23,7 +23,11 @@ RM					=		rm -rf
 
 MAIN_SRC			=		main.c
 
-PROJ_SRC			=		string/strchrn.c					\
+PROJ_SRC			=		array/arrdup.c						\
+							array/arrfree.c						\
+							array/arrlen.c						\
+							memory/memdup.c						\
+							string/strchrn.c					\
 							string/strrchrn.c					\
 							string/strrpbrk.c					\
 							string/strpbrkn.c					\
@@ -38,7 +42,11 @@ PROJ_SRC			=		string/strchrn.c					\
 							string/strstrn.c					\
 							string/strrstrn.c					\
 
-TEST_SRC			=		string/test_strchrn.c				\
+TEST_SRC			=		array/test_arrlen.c					\
+							array/test_arrdup.c					\
+							array/test_arrfree.c				\
+							memory/test_memdup.c				\
+							string/test_strchrn.c				\
 							string/test_strrchrn.c				\
 							string/test_strrpbrk.c				\
 							string/test_strpbrkn.c				\

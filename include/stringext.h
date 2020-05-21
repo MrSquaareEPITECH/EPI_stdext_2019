@@ -5,8 +5,8 @@
 ** string.h
 */
 
-#ifndef EPI_STDEXT_2019_SRC_STRING_H
-#define EPI_STDEXT_2019_SRC_STRING_H
+#ifndef EPI_STDEXT_2019_INCLUDE_STRINGEXT_H
+#define EPI_STDEXT_2019_INCLUDE_STRINGEXT_H
 
 // strchr
 char *strchrn(const char *str, char chr);
@@ -34,4 +34,4 @@ char *strtrim(const char *str, const char *list);
 char *strltrim(const char *str, const char *list);
 char *strrtrim(const char *str, const char *list);
 
-#endif // EPI_STDEXT_2019_SRC_STRING_H
+#endif // EPI_STDEXT_2019_INCLUDE_STRINGEXT_H
