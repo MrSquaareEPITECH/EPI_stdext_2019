@@ -11,8 +11,12 @@
 
 char *strrtrim(const char *str, const char *list)
 {
-    char *pos = strrpbrkn(str, list);
-    char *rtrim = strndup(str, pos - str + 1);
+    char *ptr = strrpbrkn(str, list);
+
+    if (ptr == NULL)
+        return (strdup(str));
+
+    char *rtrim = strndup(str, ptr - str + 1);
 
     return (rtrim);
 }

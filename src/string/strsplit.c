@@ -17,7 +17,7 @@ static size_t strsplit_size(const char *str, const char *delim)
 
     while (ptr && *ptr) {
         ptr = strstrn(ptr, delim);
-        if (strncmp(ptr, delim, strlen(delim)) != 0)
+        if (ptr && (strncmp(ptr, delim, strlen(delim)) != 0))
             ptr = strstr(ptr, delim);
         if (ptr)
             ptr = strstrn(ptr, delim);

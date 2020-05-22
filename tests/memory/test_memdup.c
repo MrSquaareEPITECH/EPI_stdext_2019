@@ -18,3 +18,10 @@ Test(memdup, valid)
     actual = memdup(param1, strlen(param1) + 1);
     cr_assert_str_eq(actual, expected);
 }
+
+Test(memdup, zero)
+{
+    char *param1 = NULL;
+
+    memdup(param1, 0);
+}

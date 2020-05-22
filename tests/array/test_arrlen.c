@@ -25,3 +25,16 @@ Test(arrlen, valid)
     actual = arrlen((const void **)(param1));
     cr_assert_eq(actual, expected);
 }
+
+Test(arrlen, empty)
+{
+    char **param1 = malloc(sizeof(char *) * (1));
+
+    param1[0] = NULL;
+
+    int actual = 0;
+    int expected = 0;
+
+    actual = arrlen((const void **)(param1));
+    cr_assert_eq(actual, expected);
+}

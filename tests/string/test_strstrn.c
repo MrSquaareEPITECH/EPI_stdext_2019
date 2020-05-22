@@ -19,3 +19,14 @@ Test(strstrn, valid)
     actual = strstrn(param1, param2);
     cr_assert_str_eq(actual, expected);
 }
+
+Test(strstrn, not_found)
+{
+    char *param1 = "ABCABCABC";
+    char *param2 = "ABC";
+    char *actual = NULL;
+    char *expected = NULL;
+
+    actual = strstrn(param1, param2);
+    cr_assert_eq(actual, expected);
+}

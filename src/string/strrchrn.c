@@ -5,15 +5,21 @@
 ** strrchrn.c
 */
 
-#include <stddef.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "stringext.h"
 
 char *strrchrn(const char *str, char chr)
 {
-    for (long i = (long)(strlen(str)) - 1; i >= 0; --i)
-        if (str[i] != chr)
-            return ((char *)(&str[i]));
-    return (NULL);
+    char *rev = strrev(strdup(str));
+    char *ptr = strchrn(rev, chr);
+
+    if (ptr == NULL)
+        return (NULL);
+
+    size_t pos = strlen(str) - (ptr - rev) - 1;
+
+    free(rev);
+    return ((char *)(&str[pos]));
 }

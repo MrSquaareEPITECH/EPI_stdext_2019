@@ -19,3 +19,25 @@ Test(strrtrim, valid)
     actual = strrtrim(param1, param2);
     cr_assert_str_eq(actual, expected);
 }
+
+Test(strrtrim, useless)
+{
+    char *param1 = " \tHello, World!";
+    char *param2 = " \t";
+    char *actual = NULL;
+    char *expected = " \tHello, World!";
+
+    actual = strrtrim(param1, param2);
+    cr_assert_str_eq(actual, expected);
+}
+
+Test(strrtrim, empty)
+{
+    char *param1 = "";
+    char *param2 = " \t";
+    char *actual = NULL;
+    char *expected = "";
+
+    actual = strrtrim(param1, param2);
+    cr_assert_str_eq(actual, expected);
+}

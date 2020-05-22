@@ -18,3 +18,13 @@ Test(strrev, valid)
     actual = strrev(param1);
     cr_assert_str_eq(actual, expected);
 }
+
+Test(strrev, empty)
+{
+    char param1[] = "";
+    char *actual = NULL;
+    char *expected = "";
+
+    actual = strrev(param1);
+    cr_assert_str_eq(actual, expected);
+}
