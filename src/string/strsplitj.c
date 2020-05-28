@@ -18,10 +18,10 @@ static size_t strsplitj_size(
 
     while (ptr && *ptr) {
         ptr = strstrn(ptr, delim);
-        if (strncmp(ptr, jump, strlen(jump)) == 0) {
+        if (ptr && (strncmp(ptr, jump, strlen(jump)) == 0)) {
             ptr = strstr(ptr + 1, jump);
             ptr += (ptr) ? 1 : 0;
-        } else if (strncmp(ptr, delim, strlen(delim)) != 0)
+        } else if (ptr && (strncmp(ptr, delim, strlen(delim)) != 0))
             ptr = strstr(ptr, delim);
         if (ptr)
             ptr = strstrn(ptr, delim);

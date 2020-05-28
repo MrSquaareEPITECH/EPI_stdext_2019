@@ -21,3 +21,12 @@ Test(arrfree, valid)
 
     arrfree((void **)(param1), free);
 }
+
+Test(arrfree, empty)
+{
+    char **param1 = malloc(sizeof(char *) * (1));
+
+    param1[0] = NULL;
+
+    arrfree((void **)(param1), free);
+}

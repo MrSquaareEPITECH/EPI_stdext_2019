@@ -2,29 +2,31 @@
 ** EPITECH PROJECT, 2020
 ** EPI_stdext_2019
 ** File description:
-** test_strrev.c
+** test_strrem.c
 */
 
 #include <criterion/criterion.h>
 
 #include "stringext.h"
 
-Test(strrev, valid)
+Test(strrem, valid)
 {
-    char param1[] = "Hello, World!";
+    char param1[] = " \tHello, World!\t ";
+    char *param2 = " \t";
     char *actual = NULL;
-    char *expected = "!dlroW ,olleH";
+    char *expected = "Hello,World!";
 
-    actual = strrev(param1);
+    actual = strrem(param1, param2);
     cr_assert_str_eq(actual, expected);
 }
 
-Test(strrev, empty)
+Test(strrem, empty)
 {
     char param1[] = "";
+    char *param2 = " \t";
     char *actual = NULL;
     char *expected = "";
 
-    actual = strrev(param1);
+    actual = strrem(param1, param2);
     cr_assert_str_eq(actual, expected);
 }

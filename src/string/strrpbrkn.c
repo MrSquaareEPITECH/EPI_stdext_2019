@@ -13,8 +13,12 @@
 char *strrpbrkn(const char *str, const char *reject)
 {
     char *rev = strrev(strdup(str));
-    size_t rpos = strpbrkn(rev, reject) - rev;
-    size_t pos = strlen(str) - rpos - 1;
+    char *ptr = strpbrkn(rev, reject);
+
+    if (ptr == NULL)
+        return (NULL);
+
+    size_t pos = strlen(str) - (ptr - rev) - 1;
 
     free(rev);
     return ((char *)(&str[pos]));
