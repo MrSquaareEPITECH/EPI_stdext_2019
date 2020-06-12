@@ -11,7 +11,7 @@
 
 Test(strrtrim, valid)
 {
-    char *param1 = " \tHello, World!\t ";
+    char param1[] = " \tHello, World!\t ";
     char *param2 = " \t";
     char *actual = NULL;
     char *expected = " \tHello, World!";
@@ -22,7 +22,7 @@ Test(strrtrim, valid)
 
 Test(strrtrim, useless)
 {
-    char *param1 = " \tHello, World!";
+    char param1[] = " \tHello, World!";
     char *param2 = " \t";
     char *actual = NULL;
     char *expected = " \tHello, World!";
@@ -31,9 +31,20 @@ Test(strrtrim, useless)
     cr_assert_str_eq(actual, expected);
 }
 
+Test(strrtrim, only)
+{
+    char param1[] = " \t";
+    char *param2 = " \t";
+    char *actual = NULL;
+    char *expected = "";
+
+    actual = strrtrim(param1, param2);
+    cr_assert_str_eq(actual, expected);
+}
+
 Test(strrtrim, empty)
 {
-    char *param1 = "";
+    char param1[] = "";
     char *param2 = " \t";
     char *actual = NULL;
     char *expected = "";
