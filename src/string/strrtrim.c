@@ -9,14 +9,15 @@
 
 #include "stringext.h"
 
-char *strrtrim(const char *str, const char *list)
+char *strrtrim(char *str, const char *list)
 {
     char *ptr = strrpbrkn(str, list);
 
-    if (ptr == NULL)
-        return (strdup(str));
-
-    char *rtrim = strndup(str, ptr - str + 1);
-
-    return (rtrim);
+    if (ptr == NULL) {
+        if (strrpbrk(str, list) == NULL)
+            return (str);
+        ptr = str - 1;
+    }
+    ptr[1] = '\0';
+    return (str);
 }

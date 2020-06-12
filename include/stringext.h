@@ -36,8 +36,8 @@ char *strstrn(const char *str, const char *needle);
 char *strrstrn(const char *str, const char *needle);
 
 // strtrim
-char *strtrim(const char *str, const char *list);
-char *strltrim(const char *str, const char *list);
-char *strrtrim(const char *str, const char *list);
+char *strtrim(char *str, const char *list);
+char *strltrim(char *str, const char *list);
+char *strrtrim(char *str, const char *list);
 
 #endif // EPI_STDEXT_2019_INCLUDE_STRINGEXT_H
