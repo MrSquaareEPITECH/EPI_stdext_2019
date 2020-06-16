@@ -15,8 +15,10 @@ char *strrpbrk(const char *str, const char *reject)
     char *rev = strrev(strdup(str));
     char *ptr = strpbrk(rev, reject);
 
-    if (ptr == NULL)
+    if (ptr == NULL) {
+        free(rev);
         return (NULL);
+    }
 
     size_t pos = strlen(str) - (ptr - rev) - 1;
 

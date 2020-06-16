@@ -16,8 +16,11 @@ char *strrstrn(const char *str, const char *needle)
     char *rev_needle = strrev(strdup(needle));
     char *ptr = strstrn(rev, rev_needle);
 
-    if (ptr == NULL)
+    if (ptr == NULL) {
+        free(rev_needle);
+        free(rev);
         return (NULL);
+    }
 
     size_t pos = strlen(str) - (ptr - rev) - 1;
 
